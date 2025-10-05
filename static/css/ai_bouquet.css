@@ -1,0 +1,233 @@
+/* AI Bouquet Page Styles */
+.ai-main {
+    display: grid;
+    grid-template-columns: 1fr 1.5fr;
+    gap: 30px;
+}
+
+.back-btn {
+    display: inline-block;
+    margin-top: 15px;
+    color: #9d7bb2;
+    text-decoration: none;
+    font-size: 1.1rem;
+    transition: color 0.3s;
+}
+
+.back-btn:hover {
+    color: #7d5a94;
+}
+
+.quantity-control {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-top: 10px;
+}
+
+.quantity-control button {
+    background: #f5e1e7;
+    border: none;
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    color: #9d7bb2;
+    cursor: pointer;
+    transition: transform 0.2s, background-color 0.2s;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.quantity-control button.clicked {
+    transform: scale(0.9);
+    background: #e0cff1;
+}
+
+.quantity-control button:active {
+    transform: scale(0.9);
+}
+
+.quantity-control button:hover {
+    background: #e0cff1;
+    transform: scale(1.1);
+}
+
+.quantity-control .quantity {
+    font-size: 1.2rem;
+    color: #5d4a66;
+    min-width: 30px;
+    text-align: center;
+}
+
+.ai-canvas {
+    background: #fff;
+    border-radius: 15px;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    box-shadow: 0 5px 15px rgba(93, 74, 102, 0.08);
+}
+
+#prompt-preview {
+    background: #f9f3f5;
+    padding: 15px;
+    border-radius: 10px;
+}
+
+#prompt-preview h3 {
+    color: #9d7bb2;
+    margin-bottom: 10px;
+    font-family: 'Playfair Display', serif;
+}
+
+#prompt-text {
+    color: #5d4a66;
+    line-height: 1.6;
+}
+
+.ai-result {
+    flex: 1;
+    min-height: 400px;
+    background: #f9f3f5;
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+}
+
+#loading {
+    text-align: center;
+    color: #9d7bb2;
+}
+
+#loading i {
+    font-size: 2rem;
+    margin-bottom: 15px;
+}
+
+#result-image {
+    max-width: 100%;
+    max-height: 100%;
+    border-radius: 10px;
+}
+
+.generate-container {
+    display: flex;
+    gap: 15px;
+}
+
+#generate-btn, #save-ai-btn {
+    flex: 1;
+    font-family: 'Poppins', sans-serif;
+    padding: 12px 25px;
+    border: none;
+    border-radius: 50px;
+    font-size: 1.1rem;
+    cursor: pointer;
+    transition: all 0.3s;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+}
+
+#generate-btn {
+    background: #9d7bb2;
+    color: white;
+}
+
+#generate-btn:disabled {
+    background: #d4b8e0;
+    cursor: not-allowed;
+}
+
+#generate-btn:not(:disabled):hover {
+    background: #8867a0;
+    transform: translateY(-2px);
+}
+
+#save-ai-btn {
+    background: #f5e1e7;
+    color: #9d7bb2;
+}
+
+#save-ai-btn:hover {
+    background: #e0cff1;
+    transform: translateY(-2px);
+}
+
+/* Buy Now Section */
+.buy-now-container {
+    background: #fff9fb;
+    border-radius: 15px;
+    padding: 25px;
+    margin-top: 20px;
+    border: 2px dashed #e0cff1;
+    transition: all 0.3s ease;
+}
+
+.buy-now-container h3 {
+    color: #9d7bb2;
+    font-family: 'Playfair Display', serif;
+    margin-bottom: 10px;
+    font-size: 1.5rem;
+}
+
+.buy-now-container p {
+    color: #5d4a66;
+    margin-bottom: 15px;
+}
+
+.buy-now-btn {
+    background: #ff6b9d;
+    color: white;
+    border: none;
+    border-radius: 50px;
+    padding: 12px 30px;
+    font-size: 1.1rem;
+    font-weight: 500;
+    cursor: pointer;
+    transition: all 0.3s;
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    margin: 10px 0;
+    box-shadow: 0 4px 15px rgba(255, 107, 157, 0.3);
+}
+
+.buy-now-btn:hover {
+    background: #e65a8c;
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(255, 107, 157, 0.4);
+}
+
+.buy-now-btn:active {
+    transform: translateY(0);
+}
+
+.delivery-info {
+    margin-top: 15px;
+    font-size: 0.9rem;
+    color: #7a6b84;
+}
+
+.delivery-info p {
+    margin: 5px 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+}
+
+.delivery-info i {
+    color: #9d7bb2;
+}
+
+@media (max-width: 900px) {
+    .ai-main {
+        grid-template-columns: 1fr;
+    }
+}
