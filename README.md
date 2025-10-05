@@ -10,11 +10,18 @@ This repository contains the source code for an E-Commerce Flower Shop Website. 
 - **Responsive Design:** Accessible on both desktop and mobile devices.
 - **Admin Dashboard:** Manage orders, view customer info, and handle shop operations.
 - **User-Friendly Interface:** Simple and intuitive navigation.
-
+```
 ![Screenshot 1](https://github.com/user-attachments/assets/b22fb8c7-3da4-4463-be35-127915e2a601)
+```
+```
 ![Screenshot 2](https://github.com/user-attachments/assets/9ddf609b-1e6d-4f5b-9566-50e9203d1218)
+```
+```
 ![Screenshot 3](https://github.com/user-attachments/assets/46115b8e-5fef-4af5-8a4d-8a6d1bc36d8b)
+```
+```
 ![Screenshot 4](https://github.com/user-attachments/assets/02dad176-b95c-4632-8b03-7bece7b6304f)
+```
 
 ## Technologies Used
 
