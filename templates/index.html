@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dreamy Blooms | Magical Flower Shop</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/styles.css') }}">
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600&family=Poppins:wght@300;400;500&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>Dreamy Blooms</h1>
+            <p>Create your magical bouquet</p>
+        </header>
+        
+        <nav class="main-nav">
+            <ul class="nav-list">
+                <li class="nav-item active"><a href="/">Home</a></li>
+                <li class="nav-item"><a href="/shop">Shop</a></li>
+                <li class="nav-item"><a href="/weddings">Weddings</a></li>
+                <li class="nav-item"><a href="/subscriptions">Subscriptions</a></li>
+                <li class="nav-item"><a href="/contact">Contact</a></li>
+                <li class="nav-item"><a href="/ai_bouquet">AI Bouquet</a></li>
+            </ul>
+        </nav>
+        
+        <section class="hero">
+            <img src="{{ url_for('static', filename='images/ChatGPT Image May 23, 2025, 08_23_11 AM.png') }}" alt="Beautiful flower arrangement" class="hero-image">
+            <div class="hero-content">
+                <h2>Enchanting Blooms for Every Occasion</h2>
+                <p>Handcrafted bouquets that bring magic to your special moments</p>
+                <a href="#featured-section" class="hero-btn">Shop Now</a>
+            </div>
+        </section>
+        
+        <section class="section" id="featured-section">
+            <h2 class="section-title">Featured Arrangements</h2>
+            <div class="card-grid">
+                <div class="card">
+                    <div class="card-image">
+                        <img src="{{ url_for('static', filename='images/Gemini_Generated_Image_abll2gabll2gabll.png') }}" alt="Passionate Blooms">
+                    </div>
+                    <div class="card-content">
+                        <h3 class="card-title">Passionate Blooms</h3>
+                        <p class="card-text">A perfect blend of red roses and delicate accents to express deep affection.</p>
+                        <p class="card-price">₹3,999</p>
+                        <a href="/shop" class="card-btn">View Details</a>
+                    </div>
+                </div>
+                
+                <div class="card">
+                    <div class="card-image">
+                        <img src="{{ url_for('static', filename='images/e.png') }}" alt="Ethereal Garden">
+                    </div>
+                    <div class="card-content">
+                        <h3 class="card-title">Ethereal Garden</h3>
+                        <p class="card-text">Pastel mixed bouquet that brings the beauty of a fairytale garden to your home.</p>
+                        <p class="card-price">₹4,499</p>
+                        <a href="/shop" class="card-btn">View Details</a>
+                    </div>
+                </div>
+                
+                <div class="card">
+                    <div class="card-image">
+                        <img src="{{ url_for('static', filename='images/3.png') }}" alt="Whimsical Whispers">
+                    </div>
+                    <div class="card-content">
+                        <h3 class="card-title">Whimsical Whispers</h3>
+                        <p class="card-text">Delicate whites and soft pinks create an arrangement that speaks of gentle romance.</p>
+                        <p class="card-price">₹3,499</p>
+                        <a href="/shop" class="card-btn">View Details</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+        
+        <section class="section">
+            <h2 class="section-title">Create Your Own Bouquet</h2>
+            <main>
+                <section class="flower-menu">
+                    <h2>Select Your Roses</h2>
+                    <div class="flower-items">
+                        <div class="flower-item" draggable="true" data-color="red" data-price="10">
+                            <div class="flower-image red-rose"></div>
+                            <div class="flower-info">
+                                <h3>Red Rose</h3>
+                                <p class="quantity">Available: <span>25</span></p>
+                                <p class="price">₹10</p>
+                            </div>
+                        </div>
+                        
+                        <div class="flower-item" draggable="true" data-color="pink" data-price="12">
+                            <div class="flower-image pink-rose"></div>
+                            <div class="flower-info">
+                                <h3>Pink Rose</h3>
+                                <p class="quantity">Available: <span>20</span></p>
+                                <p class="price">₹12</p>
+                            </div>
+                        </div>
+                        
+                        <div class="flower-item" draggable="true" data-color="white" data-price="15">
+                            <div class="flower-image white-rose"></div>
+                            <div class="flower-info">
+                                <h3>White Rose</h3>
+                                <p class="quantity">Available: <span>18</span></p>
+                                <p class="price">₹15</p>
+                            </div>
+                        </div>
+                        
+                        <div class="flower-item" draggable="true" data-color="yellow" data-price="20">
+                            <div class="flower-image yellow-rose"></div>
+                            <div class="flower-info">
+                                <h3>Yellow Rose</h3>
+                                <p class="quantity">Available: <span>15</span></p>
+                                <p class="price">₹20</p>
+                            </div>
+                        </div>
+                        
+                     <!--   <div class="flower-item" draggable="true" data-color="blue" data-price="18">
+                            <div class="flower-image blue-rose"></div>
+                            <div class="flower-info">
+                                <h3>Blue Rose</h3>
+                                <p class="quantity">Available: <span>12</span></p>
+                                <p class="price">₹18</p>
+                            </div>
+                        </div>
+                        
+                        <div class="flower-item" draggable="true" data-color="lavender" data-price="18">
+                            <div class="flower-image lavender-rose"></div>
+                            <div class="flower-info">
+                                <h3>Lavender Rose</h3>
+                                <p class="quantity">Available: <span>10</span></p>
+                                <p class="price">₹18</p>
+                            </div>
+                        </div>-->
+
+                    </div>
+                </section>
+                
+                <section class="bouquet-canvas">
+                    <div class="canvas-container" id="bouquet-area">
+                        <div class="vase"></div>
+                        <div class="canvas-message">Drag roses here to create your bouquet</div>
+                        <div id="sparkle-container"></div>
+                        <div id="congratulations-message">Your bouquet is blooming! <i class="fas fa-heart"></i></div>
+                    </div>
+                    
+                    <div class="bouquet-info">
+                        <div class="total-container">
+                            <div class="heart-icon">❤️</div>
+                            <div class="total-price">
+                                <p>Bouquet Total:</p>
+                                <h3 id="total-price">₹0.00</h3>
+                            </div>
+                        </div>
+                        <div class="button-container">
+                            <button id="save-btn"><i class="fas fa-save"></i> Save Bouquet</button>
+                            <button id="checkout-btn"><i class="fas fa-shopping-cart"></i> Checkout</button>
+                            <button id="reset-btn"><i class="fas fa-undo"></i> Start Over</button>
+                            <a href="{{ url_for('ai_bouquet') }}" class="ai-btn">
+                                <button id="ai-btn"><i class="fas fa-magic"></i> AI Bouquet Creator</button>
+                            </a>
+                        </div>
+                    </div>
+                </section>
+            </main>
+        </section>
+        
+        <footer>
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>About Us</h3>
+                    <p>Dreamy Blooms crafts magical floral arrangements that bring joy and wonder to every occasion.</p>
+                    <div class="social-icons">
+                        <a href="https://www.linkedin.com/in/rahul04012006" target="_blank"><i class="fab fa-linkedin"></i></a>
+                        <a href="https://www.instagram.com/its_rxhul_004/" target="_blank"><i class="fab fa-instagram"></i></a>
+                    </div>
+                </div>
+                
+                <div class="footer-section">
+                    <h3>Quick Links</h3>
+                    <p><a href="/shop">Shop</a></p>
+                    <p><a href="/weddings">Weddings</a></p>
+                    <p><a href="/subscriptions">Subscriptions</a></p>
+                    <p><a href="/contact">Contact</a></p>
+                </div>
+                
+                <div class="footer-section">
+                    <h3>Newsletter</h3>
+                    <p>Subscribe for magical flower tips and special offers.</p>
+                    <form id="newsletter-form" class="newsletter-form">
+                        <input type="email" placeholder="Your email" class="newsletter-input" value="kwalitytimekumar2006@gmail.com" required>
+                        <button type="submit" class="newsletter-btn"><i class="fas fa-paper-plane"></i></button>
+                    </form>
+                </div>
+            </div>
+            <div class="copyright">
+                &copy; 2025 Dreamy Blooms. All rights reserved.
+            </div>
+        </footer>
+    </div>
+    
+    <!-- Razorpay Integration -->
+    <script src="https://checkout.razorpay.com/v1/checkout.js"></script>
+    
+    <script src="{{ url_for('static', filename='js/script.js') }}"></script>
+    <script src="{{ url_for('static', filename='js/home.js') }}"></script>
+</body>
+</html>

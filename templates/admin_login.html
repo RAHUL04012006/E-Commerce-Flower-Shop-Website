@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin Login - Dreamy Blooms</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/styles.css') }}">
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600&family=Poppins:wght@300;400;500&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css">
+    <style>
+        .admin-login-container {
+            max-width: 500px;
+            margin: 0 auto;
+            padding: 30px;
+            background-color: #fff;
+            border-radius: 15px;
+            box-shadow: 0 5px 15px rgba(93, 74, 102, 0.1);
+        }
+        
+        .admin-login-form {
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+        }
+        
+        .admin-login-btn {
+            background: linear-gradient(135deg, #9d7bb2, #b39dbc);
+            color: white;
+            border: none;
+            padding: 12px 20px;
+            border-radius: 50px;
+            font-weight: 500;
+            font-family: 'Poppins', sans-serif;
+            cursor: pointer;
+            transition: transform 0.3s, box-shadow 0.3s;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 10px;
+        }
+        
+        .admin-login-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(93, 74, 102, 0.2);
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>Admin Login</h1>
+            <p>Secure access to your flower shop dashboard</p>
+        </header>
+        
+        <div class="admin-login-container">
+            <form id="admin-login-form" class="admin-login-form" method="POST" action="/admin/login">
+                <div class="form-group">
+                    <label for="username">Username</label>
+                    <input type="text" id="username" name="username" class="form-control" required>
+                </div>
+                
+                <div class="form-group">
+                    <label for="password">Password</label>
+                    <input type="password" id="password" name="password" class="form-control" required>
+                </div>
+                
+                {% if error %}
+                <div class="error-message" style="color: #e74c3c; text-align: center;">
+                    {{ error }}
+                </div>
+                {% endif %}
+                
+                <button type="submit" class="admin-login-btn">
+                    <i class="fas fa-lock"></i> Login
+                </button>
+            </form>
+            
+            <div style="text-align: center; margin-top: 20px;">
+                <a href="/" style="color: #9d7bb2; text-decoration: none;">
+                    <i class="fas fa-arrow-left"></i> Return to Homepage
+                </a>
+            </div>
+        </div>
+        
+        <footer>
+            <div class="copyright" style="margin-top: 30px;">
+                &copy; 2025 Dreamy Blooms. All rights reserved.
+            </div>
+        </footer>
+    </div>
+</body>
+</html>

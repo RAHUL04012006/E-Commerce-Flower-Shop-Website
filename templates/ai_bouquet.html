@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AI Bouquet Creator - Dreamy Flower Shop</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/styles.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/ai_bouquet.css') }}">
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600&family=Poppins:wght@300;400;500&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>AI Bouquet Creator</h1>
+            <p>Select flowers and let AI create your dream bouquet</p>
+            <a href="{{ url_for('home') }}" class="back-btn"><i class="fas fa-arrow-left"></i> Back to Shop</a>
+        </header>
+        
+        <main class="ai-main">
+            <section class="flower-menu">
+                <h2>Select Your Flowers</h2>
+                <div class="flower-items">
+                    <!-- Existing Rose Varieties -->
+                    <div class="flower-item" data-color="red">
+                        <div class="flower-image red-rose"></div>
+                        <div class="flower-info">
+                            <h3>Red Rose</h3>
+                            <div class="quantity-control">
+                                <button class="decrease"><i class="fas fa-minus"></i></button>
+                                <span class="quantity">0</span>
+                                <button class="increase"><i class="fas fa-plus"></i></button>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="flower-item" data-color="pink">
+                        <div class="flower-image pink-rose"></div>
+                        <div class="flower-info">
+                            <h3>Pink Rose</h3>
+                            <div class="quantity-control">
+                                <button class="decrease"><i class="fas fa-minus"></i></button>
+                                <span class="quantity">0</span>
+                                <button class="increase"><i class="fas fa-plus"></i></button>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="flower-item" data-color="white">
+                        <div class="flower-image white-rose"></div>
+                        <div class="flower-info">
+                            <h3>White Rose</h3>
+                            <div class="quantity-control">
+                                <button class="decrease"><i class="fas fa-minus"></i></button>
+                                <span class="quantity">0</span>
+                                <button class="increase"><i class="fas fa-plus"></i></button>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="flower-item" data-color="yellow">
+                        <div class="flower-image yellow-rose"></div>
+                        <div class="flower-info">
+                            <h3>Yellow Rose</h3>
+                            <div class="quantity-control">
+                                <button class="decrease"><i class="fas fa-minus"></i></button>
+                                <span class="quantity">0</span>
+                                <button class="increase"><i class="fas fa-plus"></i></button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- New Flower Varieties -->
+                    <div class="flower-item" data-color="sunflower">
+                        <div class="flower-image sunflower"></div>
+                        <div class="flower-info">
+                            <h3>Sunflower</h3>
+                            <div class="quantity-control">
+                                <button class="decrease"><i class="fas fa-minus"></i></button>
+                                <span class="quantity">0</span>
+                                <button class="increase"><i class="fas fa-plus"></i></button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="flower-item" data-color="tulip">
+                        <div class="flower-image tulip"></div>
+                        <div class="flower-info">
+                            <h3>Tulip</h3>
+                            <div class="quantity-control">
+                                <button class="decrease"><i class="fas fa-minus"></i></button>
+                                <span class="quantity">0</span>
+                                <button class="increase"><i class="fas fa-plus"></i></button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="flower-item" data-color="lily">
+                        <div class="flower-image lily"></div>
+                        <div class="flower-info">
+                            <h3>Lily</h3>
+                            <div class="quantity-control">
+                                <button class="decrease"><i class="fas fa-minus"></i></button>
+                                <span class="quantity">0</span>
+                                <button class="increase"><i class="fas fa-plus"></i></button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="flower-item" data-color="orchid">
+                        <div class="flower-image orchid"></div>
+                        <div class="flower-info">
+                            <h3>Orchid</h3>
+                            <div class="quantity-control">
+                                <button class="decrease"><i class="fas fa-minus"></i></button>
+                                <span class="quantity">0</span>
+                                <button class="increase"><i class="fas fa-plus"></i></button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="flower-item" data-color="daisy">
+                        <div class="flower-image daisy"></div>
+                        <div class="flower-info">
+                            <h3>Daisy</h3>
+                            <div class="quantity-control">
+                                <button class="decrease"><i class="fas fa-minus"></i></button>
+                                <span class="quantity">0</span>
+                                <button class="increase"><i class="fas fa-plus"></i></button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="flower-item" data-color="carnation">
+                        <div class="flower-image carnation"></div>
+                        <div class="flower-info">
+                            <h3>Carnation</h3>
+                            <div class="quantity-control">
+                                <button class="decrease"><i class="fas fa-minus"></i></button>
+                                <span class="quantity">0</span>
+                                <button class="increase"><i class="fas fa-plus"></i></button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            
+            <section class="ai-canvas">
+                <!-- Prompt preview is hidden as per user request -->
+                <div id="prompt-preview" style="display: none;">
+                    <h3>Your Bouquet Description</h3>
+                    <p id="prompt-text">Select flowers to generate a description</p>
+                </div>
+                <div class="ai-result" id="result-container">
+                    <div id="loading" style="display: none;">
+                        <i class="fas fa-spinner fa-spin"></i>
+                        <p>Creating your magical bouquet...</p>
+                    </div>
+                    <img id="result-image" style="display: none;" alt="AI Generated Bouquet">
+                </div>
+                <div class="generate-container">
+                    <button id="generate-btn" disabled>
+                        <i class="fas fa-magic"></i> Generate Bouquet
+                    </button>
+                    <button id="save-ai-btn" style="display: none;">
+                        <i class="fas fa-save"></i> Save Bouquet
+                    </button>
+                </div>
+                
+                <!-- Buy Now Section -->
+                <div class="buy-now-container" id="buy-now-container" style="display: none; margin-top: 20px; text-align: center;">
+                    <h3>Love your bouquet?</h3>
+                    <p>Get it delivered to your doorstep!</p>
+                    <button id="buy-now-btn" class="buy-now-btn">
+                        <i class="fas fa-shopping-cart"></i> Buy Now - ₹2,999
+                    </button>
+                    <div class="delivery-info">
+                        <p><i class="fas fa-truck"></i> Free delivery in 2-4 hours</p>
+                        <p><i class="fas fa-gift"></i> Free gift wrapping included</p>
+                    </div>
+                </div>
+            </section>
+        </main>
+    </div>
+    
+    <script src="{{ url_for('static', filename='js/ai_bouquet.js') }}"></script>
+</body>
+</html>

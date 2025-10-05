@@ -1,0 +1,341 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Wedding Flowers - Dreamy Blooms</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/styles.css') }}">
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600&family=Poppins:wght@300;400;500&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css">
+    <style>
+        .wedding-hero {
+            height: 500px;
+            border-radius: 20px;
+            overflow: hidden;
+            margin-bottom: 50px;
+            position: relative;
+        }
+        
+        .wedding-hero img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 8s ease;
+        }
+        
+        .wedding-hero:hover img {
+            transform: scale(1.05);
+        }
+        
+        .wedding-hero-overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: linear-gradient(to bottom, rgba(255,255,255,0.1), rgba(157, 123, 178, 0.7));
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            padding: 20px;
+        }
+        
+        .wedding-hero-content {
+            color: white;
+            max-width: 700px;
+        }
+        
+        .wedding-hero-content h2 {
+            font-family: 'Playfair Display', serif;
+            font-size: 3rem;
+            margin-bottom: 20px;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.2);
+        }
+        
+        .wedding-hero-content p {
+            font-size: 1.2rem;
+            margin-bottom: 30px;
+            line-height: 1.6;
+        }
+        
+        .testimonial {
+            background-color: white;
+            border-radius: 15px;
+            padding: 30px;
+            box-shadow: 0 5px 15px rgba(93, 74, 102, 0.08);
+            margin-bottom: 30px;
+            position: relative;
+        }
+        
+        .testimonial::before {
+            content: '"';
+            position: absolute;
+            top: 10px;
+            left: 20px;
+            font-size: 5rem;
+            color: rgba(157, 123, 178, 0.1);
+            font-family: 'Playfair Display', serif;
+        }
+        
+        .testimonial-content {
+            padding-left: 30px;
+            font-style: italic;
+            color: #5d4a66;
+            line-height: 1.8;
+            margin-bottom: 20px;
+        }
+        
+        .testimonial-author {
+            text-align: right;
+            color: #9d7bb2;
+            font-weight: 500;
+        }
+        
+        .process-step {
+            display: flex;
+            align-items: center;
+            margin-bottom: 40px;
+            gap: 30px;
+        }
+        
+        .step-number {
+            width: 60px;
+            height: 60px;
+            background: linear-gradient(135deg, #f5e1e7, #e0cff1);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-family: 'Playfair Display', serif;
+            font-size: 1.8rem;
+            color: #9d7bb2;
+            box-shadow: 0 5px 15px rgba(93, 74, 102, 0.1);
+            flex-shrink: 0;
+        }
+        
+        .step-content {
+            flex: 1;
+        }
+        
+        .step-content h3 {
+            font-family: 'Playfair Display', serif;
+            color: #5d4a66;
+            margin-bottom: 10px;
+            font-size: 1.4rem;
+        }
+        
+        .step-content p {
+            color: #b39dbc;
+            line-height: 1.6;
+        }
+        
+        @media (max-width: 768px) {
+            .wedding-hero-content h2 {
+                font-size: 2rem;
+            }
+            
+            .process-step {
+                flex-direction: column;
+                text-align: center;
+                gap: 15px;
+            }
+            
+            .testimonial-author {
+                text-align: center;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>Wedding Flowers</h1>
+            <p>Creating magical moments for your special day</p>
+        </header>
+        
+        <nav class="main-nav">
+            <ul class="nav-list">
+                <li class="nav-item"><a href="/">Home</a></li>
+                <li class="nav-item"><a href="/shop">Shop</a></li>
+                <li class="nav-item active"><a href="/weddings">Weddings</a></li>
+                <li class="nav-item"><a href="/subscriptions">Subscriptions</a></li>
+                <li class="nav-item"><a href="/contact">Contact</a></li>
+                <li class="nav-item"><a href="/ai_bouquet">AI Bouquet</a></li>
+            </ul>
+        </nav>
+        
+        <div class="wedding-hero">
+            <img src="{{ url_for('static', filename='images/wed.png') }}" alt="Dreamy Wedding Flowers">
+            <div class="wedding-hero-overlay">
+                <div class="wedding-hero-content">
+                    <h2>Bespoke Wedding Florals</h2>
+                    <p>From intimate ceremonies to grand celebrations, our custom floral designs create the perfect ambiance for your wedding day. Each arrangement is thoughtfully crafted to reflect your unique love story.</p>
+                    <a href="/contact" class="hero-btn">Schedule Consultation</a>
+                </div>
+            </div>
+        </div>
+        
+        <section class="section">
+            <h2 class="section-title">Our Wedding Services</h2>
+            <div class="card-grid">
+                <div class="card">
+                    <div class="card-image">
+                        <img src="{{ url_for('static', filename='images/bride.jpg') }}" alt="Bridal Bouquets">
+                    </div>
+                    <div class="card-content">
+                        <h3 class="card-title">Bridal Bouquets</h3>
+                        <p class="card-text">Exquisite, personalized bouquets designed to complement your dress, theme, and personality.</p>
+                        <p class="card-price">Starting at ₹11,999</p>
+                        <a href="/contact" class="card-btn">Inquire</a>
+                    </div>
+                </div>
+                
+                <div class="card">
+                    <div class="card-image">
+                        <img src="{{ url_for('static', filename='images/70.png') }}" alt="Ceremony Flowers">
+                    </div>
+                    <div class="card-content">
+                        <h3 class="card-title">Ceremony Decorations</h3>
+                        <p class="card-text">Transform your venue with stunning arches, aisle arrangements, and altar pieces.</p>
+                        <p class="card-price">Starting at ₹39,999</p>
+                        <a href="/contact" class="card-btn">Inquire</a>
+                    </div>
+                </div>
+                
+                <div class="card">
+                    <div class="card-image">
+                        <img src="{{ url_for('static', filename='images/69.png') }}" alt="Reception Centerpieces">
+                    </div>
+                    <div class="card-content">
+                        <h3 class="card-title">Reception Centerpieces</h3>
+                        <p class="card-text">Elegant table arrangements that create a magical atmosphere for your celebration.</p>
+                        <p class="card-price">Starting at ₹6,799 per table</p>
+                        <a href="/contact" class="card-btn">Inquire</a>
+                    </div>
+                </div>
+                
+                <div class="card">
+                    <div class="card-image">
+                        <img src="{{ url_for('static', filename='images/71.png') }}" alt="Wedding Party Flowers">
+                    </div>
+                    <div class="card-content">
+                        <h3 class="card-title">Wedding Party Flowers</h3>
+                        <p class="card-text">Coordinating boutonnieres, corsages, and bridesmaid bouquets for your entire party.</p>
+                        <p class="card-price">Starting at ₹1,999 per piece</p>
+                        <a href="/contact" class="card-btn">Inquire</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+        
+        <section class="section">
+            <h2 class="section-title">Our Wedding Process</h2>
+            
+            <div class="process-step">
+                <div class="step-number">1</div>
+                <div class="step-content">
+                    <h3>Complimentary Consultation</h3>
+                    <p>Share your vision with us during a personalized consultation. We'll discuss your wedding theme, color palette, favorite flowers, and budget to ensure we create the perfect floral experience.</p>
+                </div>
+            </div>
+            
+            <div class="process-step">
+                <div class="step-number">2</div>
+                <div class="step-content">
+                    <h3>Custom Proposal</h3>
+                    <p>Based on our consultation, we'll create a detailed proposal with mood boards, flower selections, and pricing tailored to your unique wedding vision.</p>
+                </div>
+            </div>
+            
+            <div class="process-step">
+                <div class="step-number">3</div>
+                <div class="step-content">
+                    <h3>Refinement</h3>
+                    <p>We'll work together to refine your selections until everything is exactly as you've dreamed. Adjustments can be made up to three weeks before your wedding.</p>
+                </div>
+            </div>
+            
+            <div class="process-step">
+                <div class="step-number">4</div>
+                <div class="step-content">
+                    <h3>Flawless Execution</h3>
+                    <p>On your wedding day, our team handles all setup and installation, ensuring every detail is perfect so you can focus on enjoying your special day.</p>
+                </div>
+            </div>
+        </section>
+        
+        <section class="section">
+            <h2 class="section-title">What Our Couples Say</h2>
+            
+            <div class="testimonial">
+                <p class="testimonial-content">
+                    The flowers Dreamy Blooms created for our wedding exceeded all expectations. Every arrangement was more beautiful than I could have imagined, and worked perfectly with our venue. The bridal bouquet brought tears to my eyes!
+                </p>
+                <p class="testimonial-author">— Emma & James</p>
+            </div>
+            
+            <div class="testimonial">
+                <p class="testimonial-content">
+                    Working with Dreamy Blooms was a dream come true. They listened to our vision and transformed it into something even more magical. Our guests couldn't stop talking about how gorgeous all the floral arrangements were.
+                </p>
+                <p class="testimonial-author">— Michael & Sophia</p>
+            </div>
+            
+            <div class="testimonial">
+                <p class="testimonial-content">
+                    Planning a wedding can be stressful, but working with Dreamy Blooms was the easiest part of our journey. Their creativity, professionalism, and attention to detail are unmatched. Our flowers were absolutely stunning!
+                </p>
+                <p class="testimonial-author">— Olivia & Nathan</p>
+            </div>
+        </section>
+        
+        <section class="section">
+            <div class="card" style="text-align: center; padding: 40px;">
+                <h2 style="font-family: 'Playfair Display', serif; color: #9d7bb2; font-size: 2rem; margin-bottom: 20px;">Ready to Create Your Wedding Flowers?</h2>
+                <p style="margin-bottom: 30px; color: #5d4a66; max-width: 700px; margin-left: auto; margin-right: auto;">
+                    Let's bring your floral vision to life. Contact us to schedule your complimentary consultation and begin your journey to magical wedding flowers.
+                </p>
+                <a href="/contact" class="hero-btn">Schedule Consultation</a>
+            </div>
+        </section>
+        
+        <footer>
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>About Us</h3>
+                    <p>Dreamy Blooms crafts magical floral arrangements that bring joy and wonder to every occasion.</p>
+                    <div class="social-icons">
+                        <a href="#"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                        <a href="#"><i class="fab fa-pinterest-p"></i></a>
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                    </div>
+                </div>
+                
+                <div class="footer-section">
+                    <h3>Quick Links</h3>
+                    <p><a href="/shop">Shop</a></p>
+                    <p><a href="/weddings">Weddings</a></p>
+                    <p><a href="/subscriptions">Subscriptions</a></p>
+                    <p><a href="/contact">Contact</a></p>
+                </div>
+                
+                <div class="footer-section">
+                    <h3>Newsletter</h3>
+                    <p>Subscribe for magical flower tips and special offers.</p>
+                    <form id="newsletter-form" class="newsletter-form">
+                        <input type="email" placeholder="Your email" class="newsletter-input" required>
+                        <button type="submit" class="newsletter-btn"><i class="fas fa-paper-plane"></i></button>
+                    </form>
+                </div>
+            </div>
+            <div class="copyright">
+                &copy; 2025 Dreamy Blooms. All rights reserved.
+            </div>
+        </footer>
+    </div>
+    
+    <script src="{{ url_for('static', filename='js/home.js') }}"></script>
+</body>
+</html>

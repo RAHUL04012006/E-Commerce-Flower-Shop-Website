@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Shop - Dreamy Blooms</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/styles.css') }}">
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600&family=Poppins:wght@300;400;500&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>Our Magical Collection</h1>
+            <p>Handcrafted bouquets for every emotion</p>
+        </header>
+        
+        <nav class="main-nav">
+            <ul class="nav-list">
+                <li class="nav-item"><a href="/">Home</a></li>
+                <li class="nav-item active"><a href="/shop">Shop</a></li>
+                <li class="nav-item"><a href="/weddings">Weddings</a></li>
+                <li class="nav-item"><a href="/subscriptions">Subscriptions</a></li>
+                <li class="nav-item"><a href="/contact">Contact</a></li>
+                <li class="nav-item"><a href="/ai_bouquet">AI Bouquet</a></li>
+            </ul>
+        </nav>
+        
+        <section class="section">
+            <h2 class="section-title">Seasonal Collections</h2>
+            <div class="card-grid">
+                <div class="card">
+                    <div class="card-image">
+                        <img src="{{ url_for('static', filename='images/8.jpg') }}" alt="Spring Whispers">
+                    </div>
+                    <div class="card-content">
+                        <h3 class="card-title">Spring Whispers</h3>
+                        <p class="card-text">A delicate arrangement of spring blooms in soft pastels that captures the essence of the season.</p>
+                        <p class="card-price">₹3,499</p>
+                        <a href="#" class="card-btn">Add to Cart</a>
+                    </div>
+                </div>
+                
+                <div class="card">
+                    <div class="card-image">
+                        <img src="{{ url_for('static', filename='images/5.png') }}" alt="Summer Radiance">
+                    </div>
+                    <div class="card-content">
+                        <h3 class="card-title">Summer Radiance</h3>
+                        <p class="card-text">Vibrant summer flowers that bring warmth and joy to any space with their bright colors.</p>
+                        <p class="card-price">₹3,799</p>
+                        <a href="#" class="card-btn">Add to Cart</a>
+                    </div>
+                </div>
+                
+                <div class="card">
+                    <div class="card-image">
+                        <img src="{{ url_for('static', filename='images/aut.jpg') }}" alt="Autumn Embrace">
+                    </div>
+                    <div class="card-content">
+                        <h3 class="card-title">Autumn Embrace</h3>
+                        <p class="card-text">Rich harvest tones create a warm, inviting bouquet that celebrates the beauty of fall.</p>
+                        <p class="card-price">₹3,699</p>
+                        <a href="#" class="card-btn">Add to Cart</a>
+                    </div>
+                </div>
+                
+                <div class="card">
+                    <div class="card-image">
+                        <img src="{{ url_for('static', filename='images/10.jpg') }}" alt="Winter Wonder">
+                    </div>
+                    <div class="card-content">
+                        <h3 class="card-title">Winter Wonder</h3>
+                        <p class="card-text">Elegant whites and cool blues that bring the serene beauty of winter into your home.</p>
+                        <p class="card-price">₹4,099</p>
+                        <a href="#" class="card-btn">Add to Cart</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+        
+        <section class="section">
+            <h2 class="section-title">Special Occasions</h2>
+            <div class="card-grid">
+                <div class="card">
+                    <div class="card-image">
+                        <img src="{{ url_for('static', filename='images/abc.jpg') }}" alt="Birthday Bliss">
+                    </div>
+                    <div class="card-content">
+                        <h3 class="card-title">Birthday Bliss</h3>
+                        <p class="card-text">Celebration bouquet with a playful mix of colors to make someone's special day even brighter.</p>
+                        <p class="card-price">₹3,799</p>
+                        <a href="#" class="card-btn">Add to Cart</a>
+                    </div>
+                </div>
+                
+                <div class="card">
+                    <div class="card-image">
+                        <img src="{{ url_for('static', filename='images/bc.jpg') }}" alt="Romantic Whisper">
+                    </div>
+                    <div class="card-content">
+                        <h3 class="card-title">Romantic Whisper</h3>
+                        <p class="card-text">A passionate arrangement of red and pink blooms that speaks the language of love.</p>
+                        <p class="card-price">₹4,299</p>
+                        <a href="#" class="card-btn">Add to Cart</a>
+                    </div>
+                </div>
+                
+                <div class="card">
+                    <div class="card-image">
+                        <img src="{{ url_for('static', filename='images/ab.jpg') }}" alt="Congratulations Charm">
+                    </div>
+                    <div class="card-content">
+                        <h3 class="card-title">Congratulations Charm</h3>
+                        <p class="card-text">Bright and cheerful flowers to celebrate achievements and new beginnings.</p>
+                        <p class="card-price">₹3,599</p>
+                        <a href="#" class="card-btn">Add to Cart</a>
+                    </div>
+                </div>
+                
+                <div class="card">
+                    <div class="card-image">
+                        <img src="{{ url_for('static', filename='images/bcd.jpg') }}" alt="Sympathy Embrace">
+                    </div>
+                    <div class="card-content">
+                        <h3 class="card-title">Sympathy Embrace</h3>
+                        <p class="card-text">A tasteful arrangement of white and soft-colored blooms offering comfort and peace.</p>
+                        <p class="card-price">₹4,499</p>
+                        <a href="#" class="card-btn">Add to Cart</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+        
+        <section class="section">
+            <h2 class="section-title">Create Your Own</h2>
+            <div class="card-grid">
+                <div class="card" style="grid-column: span 2;">
+                    <div class="card-content" style="text-align: center; padding: 40px;">
+                        <h3 class="card-title" style="font-size: 2rem; margin-bottom: 20px;">Personalized Bouquet Experience</h3>
+                        <p class="card-text" style="margin-bottom: 30px; font-size: 1.1rem;">
+                            Create a bouquet that truly speaks to your heart. Choose your favorite flowers, colors, and arrangement style.
+                        </p>
+                        <div style="display: flex; justify-content: center; gap: 20px;">
+                            <a href="/" class="hero-btn">DIY Bouquet Builder</a>
+                            <a href="/ai_bouquet" class="hero-btn" style="background: linear-gradient(135deg, #9d7bb2, #e84393);">
+                                AI Bouquet Creator
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        
+        <footer>
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>About Us</h3>
+                    <p>Dreamy Blooms crafts magical floral arrangements that bring joy and wonder to every occasion.</p>
+                    <div class="social-icons">
+                        <a href="#"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                        <a href="#"><i class="fab fa-pinterest-p"></i></a>
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                    </div>
+                </div>
+                
+                <div class="footer-section">
+                    <h3>Quick Links</h3>
+                    <p><a href="/shop">Shop</a></p>
+                    <p><a href="/weddings">Weddings</a></p>
+                    <p><a href="/subscriptions">Subscriptions</a></p>
+                    <p><a href="/contact">Contact</a></p>
+                </div>
+                
+                <div class="footer-section">
+                    <h3>Newsletter</h3>
+                    <p>Subscribe for magical flower tips and special offers.</p>
+                    <form id="newsletter-form" class="newsletter-form">
+                        <input type="email" placeholder="Your email" class="newsletter-input" required>
+                        <button type="submit" class="newsletter-btn"><i class="fas fa-paper-plane"></i></button>
+                    </form>
+                </div>
+            </div>
+            <div class="copyright">
+                &copy; 2025 Dreamy Blooms. All rights reserved.
+            </div>
+        </footer>
+    </div>
+    
+    <script src="{{ url_for('static', filename='js/home.js') }}"></script>
+</body>
+</html>

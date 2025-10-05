@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact Us - Dreamy Blooms</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/styles.css') }}">
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600&family=Poppins:wght@300;400;500&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>Contact Us</h1>
+            <p>We'd love to hear from you</p>
+        </header>
+        
+        <nav class="main-nav">
+            <ul class="nav-list">
+                <li class="nav-item"><a href="/">Home</a></li>
+                <li class="nav-item"><a href="/shop">Shop</a></li>
+                <li class="nav-item"><a href="/weddings">Weddings</a></li>
+                <li class="nav-item"><a href="/subscriptions">Subscriptions</a></li>
+                <li class="nav-item active"><a href="/contact">Contact</a></li>
+                <li class="nav-item"><a href="/ai_bouquet">AI Bouquet</a></li>
+            </ul>
+        </nav>
+        
+        <section class="section">
+            <div class="contact-form">
+                <form id="contact-form">
+                    <div class="form-group">
+                        <label for="name">Your Name</label>
+                        <input type="text" id="name" name="name" class="form-control" required>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="email">Email Address</label>
+                        <input type="email" id="email" name="email" class="form-control" required>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="subject">Subject</label>
+                        <input type="text" id="subject" name="subject" class="form-control" required>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="message">Your Message</label>
+                        <textarea id="message" name="message" class="form-control" rows="5" required></textarea>
+                    </div>
+                    
+                    <button type="submit" class="submit-btn">Send Message</button>
+                </form>
+            </div>
+        </section>
+        
+        <section class="section">
+            <h2 class="section-title">Visit Our Shop</h2>
+            <div class="card-grid">
+                <div class="card">
+                    <div class="card-image">
+                        <img src="https://pixabay.com/get/gd57b06a8c145d6a438264eca995937406a8090d2c096cc8a161c3cd86e1bbdf44ab481a0aae5099b0ad502320bce4eda41b90336658d0d3d06efee1b44c7156c_1280.jpg" alt="Dreamy Blooms Shop Interior">
+                    </div>
+                    <div class="card-content">
+                        <h3 class="card-title">Our Main Location</h3>
+                        <p class="card-text">No-5 Thangavel Nagar<br>Kolathur, Chennai-600099</p>
+                        <p class="card-text">Monday - Saturday: 9am - 7pm<br>Sunday: 10am - 5pm</p>
+                        <p class="card-text">Phone: +91 9876543210<br>Email: kwalitytimekumar2006@gmail.com</p>
+                    </div>
+                </div>
+                
+                <div class="card">
+                    <div class="card-image">
+                        <img src="https://pixabay.com/get/geacd2eab0b99f5241d93d00e8f0bcc09eec437bf87c546919c70d216f20fe2bd12a088464b07b5fc2eec38f0c5e04b11073f46eb308ab22adb30ef7ead06d9c3_1280.jpg" alt="Dreamy Blooms Shop Interior">
+                    </div>
+                    <div class="card-content">
+                        <h3 class="card-title">Boutique Branch</h3>
+                        <p class="card-text">No-5 Thangavel Nagar<br>Kolathur, Chennai-600099</p>
+                        <p class="card-text">Monday - Friday: 10am - 7pm<br>Saturday: 10am - 6pm<br>Sunday: Closed</p>
+                        <p class="card-text">Phone: +91 9876543210<br>Email: kwalitytimekumar2006@gmail.com</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+        
+        <footer>
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>About Us</h3>
+                    <p>Dreamy Blooms crafts magical floral arrangements that bring joy and wonder to every occasion.</p>
+                    <div class="social-icons">
+                        <a href="#"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                        <a href="#"><i class="fab fa-pinterest-p"></i></a>
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                    </div>
+                </div>
+                
+                <div class="footer-section">
+                    <h3>Quick Links</h3>
+                    <p><a href="/shop">Shop</a></p>
+                    <p><a href="/weddings">Weddings</a></p>
+                    <p><a href="/subscriptions">Subscriptions</a></p>
+                    <p><a href="/contact">Contact</a></p>
+                </div>
+                
+                <div class="footer-section">
+                    <h3>Newsletter</h3>
+                    <p>Subscribe for magical flower tips and special offers.</p>
+                    <form id="newsletter-form" class="newsletter-form">
+                        <input type="email" placeholder="Your email" class="newsletter-input" required>
+                        <button type="submit" class="newsletter-btn"><i class="fas fa-paper-plane"></i></button>
+                    </form>
+                </div>
+            </div>
+            <div class="copyright">
+                &copy; 2025 Dreamy Blooms. All rights reserved.
+            </div>
+        </footer>
+    </div>
+    
+    <script src="{{ url_for('static', filename='js/home.js') }}"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const contactForm = document.getElementById('contact-form');
+            
+            contactForm.addEventListener('submit', async (e) => {
+                e.preventDefault();
+                
+                const formData = new FormData(contactForm);
+                
+                try {
+                    const response = await fetch('/api/contact', {
+                        method: 'POST',
+                        body: formData
+                    });
+                    
+                    const data = await response.json();
+                    
+                    if (data.success) {
+                        alert(data.message);
+                        contactForm.reset();
+                    } else {
+                        alert(data.message);
+                    }
+                } catch (error) {
+                    console.error('Error:', error);
+                    alert('An error occurred. Please try again later.');
+                }
+            });
+        });
+    </script>
+</body>
+</html>
